@@ -100,16 +100,59 @@ le pusho al primo array con un ciclo:
 console.log('immagine e desdcrizione', teamContainer);
 
 for (let i = 0; i < cards.length; i++){
+  
   teamContainer.innerHTML += `
   <div class="team-card">
-    <div class="card-image">
-      <img
-      src="${cards[i].picture}"/>
-    </div>
-    <div class="card-text">
-      <h3>${cards[i].nome}</h3>
-      <p>${cards[i].ruolo}</p>
-    </div>
+  ${handleClick()}
+  <div class="card-image">
+  <img
+  src="${cards[i].picture}"/>
   </div>
-  `;
+  <div class="card-text">
+  <h3>${cards[i].nome}</h3>
+  <p>${cards[i].ruolo}</p>
+  </div>
+  </div> `;
+
+
+}
+
+// creare l'evento del click 
+// fare in modo che quando vengano inseriti i dati venga creato un oggetto
+// aggiungere quell'oggetto all'array generale (cards)
+
+
+let button = document.getElementById('addMemberButton').addEventListener('click',handleClick);
+
+function handleClick(event){
+  const arr = [{}];
+
+  let nome= document.getElementById('name');
+  let role = document.getElementById('role');
+  let image = document.getElementById('image');
+  console.log('nome', nome);
+  console.log('ruolo',role);
+  console.log('immagine',image);
+
+  for (let i = 0; i < cards.length; i++){
+    const arrr = [];
+    if (nome.input){
+      arrr[i].nome;
+      console.log('ok',arrr[i].nome);
+    }
+    if (role.input){
+      arrr[i].role;
+    }
+    if (image.input){
+      arrr[i].image;
+    }
+    for (let i in arrr){
+      console.log('vediamo', arrr);
+    } 
+  }
+  arr.push(...cards);
+  console.log('array oggetto',arr);
+
+  
+  return arr;
 }
