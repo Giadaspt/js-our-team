@@ -6,31 +6,110 @@
 
 
 let teamContainer = document.querySelector('.team-container');
-let teamCards = document.getElementsByClassName('team-card');
+let teamCards ;
 
 let cards = [
   {
     picture: 'img/wayne-barnett-founder-ceo.jpg',
     nome: 'Wayne Barnett',
     ruolo: 'Founder & CEO',
+  },
+  {
+    picture: 'img/angela-caroll-chief-editor.jpg',
+    nome: 'Angela Caroli',
+    ruolo: 'Chief Editor',
+  },
+  {
+    picture: 'img/walter-gordon-office-manager.jpg',
+    nome: 'Walter Gordon',
+    ruolo: 'Office Manager',
+  },
+  {
+    picture: 'img/angela-lopez-social-media-manager.jpg',
+    nome: 'Angela Lopez',
+    ruolo: 'Social Media Manager',
+  },
+  {
+    picture: 'img/scott-estrada-developer.jpg',
+    nome: 'Scott Estrada',
+    ruolo: 'Developer',
+  },
+  {
+    picture: 'img/barbara-ramos-graphic-designer.jpg',
+    nome: 'Barbara Ramos',
+    ruolo: 'Graphic Designer',
   }
 ]
-console.log("questo è l'array dell'oggetto", cards);
+console.log("questo è il primo array con oggetto", cards);
 
-teamContainer.append(cards);
+/*
+creare l' array delle altre card
+dentro all'array ci metto direttamente gli oggetti delle altre card del team
+le pusho al primo array con un ciclo:
+  creati gli array faccio un ciclo che li implementa con il push
+*/
+//faccio un array con gli altri oggetti dentro e lo pusho direttamente
+// let cards2 = [
+//   {
+//     picture: 'img/angela-caroll-chief-editor.jpg',
+//     nome: 'Angela Caroli',
+//     ruolo: 'Chief Editor',
+//   },
+//   {
+//     picture: 'img/walter-gordon-office-manager.jpg',
+//     nome: 'Walter Gordon',
+//     ruolo: 'Office Manager',
+//   },
+//   {
+//     picture: 'img/angela-lopez-social-media-manager.jpg',
+//     nome: 'Angela Lopez',
+//     ruolo: 'Social Media Manager',
+//   },
+//   {
+//     picture: 'img/scott-estrada-developer.jpg',
+//     nome: 'Scott Estrada',
+//     ruolo: 'Developer',
+//   },
+//   {
+//     picture: 'img/barbara-ramos-graphic-designer.jpg',
+//     nome: 'Barbara Ramos',
+//     ruolo: 'Graphic Designer',
+//   }
+// ]
 
-teamContainer.innerHTML = `
-<div class="team-card">
-  <div class="card-image">
-    <img
-    src="${cards[0].picture}"/>
+// console.log('questo è il secondo array con gli altri oggetti',cards);
+
+//cards.push(...cards2);
+// console.log("questo è l'array con lo spread",cards);
+
+//teamContainer.append(cards);
+
+// teamContainer.innerHTML += `
+// <div class="team-card">
+//   <div class="card-image">
+//     <img
+//     src="${cards[0].picture}"/>
+//   </div>
+//   <div class="card-text">
+//     <h3>${cards[0].nome}</h3>
+//     <p>${cards[0].ruolo}</p>
+//   </div>
+// </div>
+// `;
+
+console.log('immagine e desdcrizione', teamContainer);
+
+for (let i = 0; i < cards.length; i++){
+  teamContainer.innerHTML += `
+  <div class="team-card">
+    <div class="card-image">
+      <img
+      src="${cards[i].picture}"/>
+    </div>
+    <div class="card-text">
+      <h3>${cards[i].nome}</h3>
+      <p>${cards[i].ruolo}</p>
+    </div>
   </div>
-  <div class="card-text">
-    <h3>${cards[0].nome}</h3>
-    <p>${cards[0].ruolo}</p>
-  </div>
-</div>
-`;
-console.log('stampato immagine e desdcrizione', teamContainer);
-
-
+  `;
+}
